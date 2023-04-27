@@ -1,11 +1,13 @@
 const express = require("express");
-const route = require("./router");
-const bodyParser= require("body-parser")
+const route = require("./src/router.js");
+const bodyParser = require("body-parser")
 const mongoose = require("mongoose");
- const app = express();
- app.use(express.json());
+const app = express();
+app.use(express.json());
 
- mongoose
+
+mongoose.set('strictQuery', true)//Deprication error
+mongoose
   .connect(
     "mongodb+srv://DeeptirthaMukherjee:QYKI3k8QSKC4I7FZ@cluster1.khatgm1.mongodb.net/project4-db?retryWrites=true&w=majority",
     { UseNewUrlParser: true }
@@ -15,6 +17,7 @@ const mongoose = require("mongoose");
 
 app.use("/", route);
 
-app.listen(process.env.PORT || 3000, function () {
-  console.log("listening at " + (process.env.PORT || 3000));
-});
+
+app.listen(process.env.PORT || 3001, function () {
+  console.log("Express is running on port " + (process.env.PORT || 3001))
+})

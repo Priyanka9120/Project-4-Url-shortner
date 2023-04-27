@@ -1,6 +1,6 @@
 const express=require("express")
 const router=express.Router()
-const {creatUrl,geturl}= require("./controller/controller")
+const {creatUrl,geturl}= require("./controller/controller.js")
 
 //========================================================Create short url=======================================================================
 router.post("/url/shorten",creatUrl)

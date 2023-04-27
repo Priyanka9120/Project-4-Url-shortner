@@ -1,8 +1,8 @@
-const UrlModel =require("../model/model")
+const UrlModel =require("../model/model.js")
 const shortId =require("shortid")
 const validUrl = require('valid-url')
 const axios=require("axios")
-const {SETEX_ASYNC,GET_ASYNC}=require("../cache")
+const {SETEX_ASYNC,GET_ASYNC}=require("../cache.js")
 
 
 //*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*--Create Url--*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#**#*#*#*#*#
